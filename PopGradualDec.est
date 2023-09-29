@@ -1,0 +1,26 @@
+// Priors and rules file
+// *********************
+
+[PARAMETERS]
+//#isInt? #name   #dist.#min  #max
+//all Ns are in number of haploid individuals
+1  Ncont1  unif  5  10000  output
+1  Ncont2  unif  5  10000  output
+1  Tr1  unif  10  10000  output
+1  Tr2  unif  10  10000  output
+1  Nadd1  unif 5  100000 hide
+1  Nadd2  unif 5  100000 hide
+1  Nanc  unif  5  100000 output
+1  TafterDiv  unif  1 50000  hide
+
+[COMPLEX PARAMETERS]
+1 TrOld  =  Tr1 %max% Tr2  hide
+1 Tdiv = TrOld + TafterDiv  output
+1 Nhist1 = Ncont1 + Nadd1 output
+1 Nhist2 = Ncont2 + Nadd2 output
+0 RATIO_hist1_cont1 = Nhist1/Ncont1 hide
+0 RATIO_hist2_cont2 = Nhist2/Ncont2 hide
+0 RT1 = log(RATIO_hist1_cont1) hide
+0 RT2 = log(RATIO_hist2_cont2) hide
+0 R1  = RT1/Tr1 output
+0 R2  = RT2/Tr2 output

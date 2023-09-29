@@ -1,0 +1,12 @@
+// Priors and rules file
+// *********************
+
+[PARAMETERS]
+//#isInt? #name   #dist.#min  #max
+//all Ns are in number of haploid individuals
+1  Npop1  unif 5  10000 output
+1  Npop2  unif 5  10000 output
+1  Tdiv  unif  10 100000 output
+1  Nanc  unif 5  100000 output
+
+[COMPLEX PARAMETERS]
